@@ -1,2 +1,3 @@
-# ftkvim
+# ftk
+
 Vim settings

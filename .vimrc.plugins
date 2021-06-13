@@ -1,0 +1,77 @@
+"==============================================================================
+" Manage plugins by https://github.com/junegunn/vim-plug
+"------------------------------------------------------------------------------
+
+
+"==============================================================================
+" Basics
+"------------------------------------------------------------------------------
+set nocompatible        " Must be first line
+set background=dark
+
+
+"==============================================================================
+" Windows Compatible
+"------------------------------------------------------------------------------
+if has('win32') || has('win64')
+    " Use '.vim' instead of 'vimfiles' on Windows
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+
+    if has("multi_byte")
+        set termencoding=cp850
+        set encoding=utf-8
+        setglobal fileencoding=utf-8
+        set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15
+    endif
+endif
+
+
+"==============================================================================
+" Setup vim-plug
+"------------------------------------------------------------------------------
+filetype off
+
+if exists('g:ftk_vim_plug_dir')
+    let s:ftk_vim_plug_dir = g:ftk_vim_plug_dir
+else
+    let s:ftk_vim_plug_dir = '~/.vim'
+endif
+
+let s:ftk_vim_plug_path = s:ftk_vim_plug_dir . '/autoload/plug.vim'
+execute 'set rtp+=' . s:ftk_vim_plug_dir
+
+if exists('g:ftk_initialize_plugins') && empty(glob(s:ftk_vim_plug_path))
+    let s:vim_plug_uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    silent execute '!curl -fLo ' . s:ftk_vim_plug_path . ' --create-dirs ' . s:vim_plug_uri
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+if !exists('g:ftk_plugin_dir')
+    let g:ftk_plugin_dir = '~/.vim/plugins'
+endif
+
+if !empty(glob(s:ftk_vim_plug_path))
+    call plug#begin(g:ftk_plugin_dir)
+
+    Plug 'tomtom/tlib_vim'
+
+    if executable('rg')
+        Plug 'mileszs/ack.vim'
+        let g:ackprg = 'rg --column --smart-case'
+    elseif executable('ag')
+        Plug 'mileszs/ack.vim'
+        let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+    endif
+
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'filfirst/Monota'
+    Plug 'altercation/vim-colors-solarized'
+
+    " Use local plugins config if available
+    if filereadable(expand("~/.vimrc.plugins.local"))
+        source ~/.vimrc.plugins.local
+    endif
+
+    call plug#end()
+endif

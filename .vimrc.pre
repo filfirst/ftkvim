@@ -1,0 +1,15 @@
+"==============================================================================
+" ftk global variables
+"------------------------------------------------------------------------------
+let g:ftk_storage_directory = $HOME . '/.vim/storage'
+let g:ftk_initialize_plugins = 1
+let g:ftk_vim_plug_dir = $HOME . '/.vim/vim-plug'
+let g:ftk_plugin_dir = $HOME . '/.vim/plugins'
+
+
+"==============================================================================
+" Use local before if available
+"------------------------------------------------------------------------------
+if filereadable(expand("~/.vimrc.pre.local"))
+    source ~/.vimrc.pre.local
+endif
