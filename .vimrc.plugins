@@ -70,7 +70,7 @@ if !empty(glob(s:ftk_vim_plug_path))
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'easymotion/vim-easymotion'
-    "Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'jistr/vim-nerdtree-tabs'
     "Plug 'mhinz/vim-signify'
     "Plug 'kana/vim-textobj-user'
     "Plug 'kana/vim-textobj-indent'

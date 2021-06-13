@@ -306,12 +306,11 @@ nnoremap <Leader>89 :set cc=<CR>
 if isdirectory(expand(g:ftk_plugin_dir . '/nerdtree'))
     let g:NERDShutUp=1
 
-    " FIXME: NERDTreeTabsToggle not work
-    "nnoremap <Leader>ee :NERDTreeTabsToggle<CR>
-    "map <C-e> <plug>NERDTreeTabsToggle<CR>
-    map <Leader>ee :NERDTreeToggle<CR>
-    map <leader>e :NERDTreeFind<CR>
-    nmap <leader>nt :NERDTreeFind<CR>
+    if isdirectory(expand(g:ftk_plugin_dir . '/vim-nerdtree-tabs'))
+        map <Leader>ee <plug>NERDTreeTabsToggle<CR>
+    else
+        map <Leader>ee :NERDTreeToggle<CR>
+    endif
 
     let NERDTreeShowBookmarks=1
     let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
