@@ -63,7 +63,7 @@ if !empty(glob(s:ftk_vim_plug_path))
         let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
     endif
 
-    "Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
     Plug 'altercation/vim-colors-solarized'
     Plug 'filfirst/Monota'
     Plug 'jiangmiao/auto-pairs'

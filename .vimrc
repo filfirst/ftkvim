@@ -302,6 +302,40 @@ nnoremap <Leader>89 :set cc=<CR>
 "==============================================================================
 " Plugins
 "------------------------------------------------------------------------------
+" nerdtree
+if isdirectory(expand(g:ftk_plugin_dir . '/nerdtree'))
+    let g:NERDShutUp=1
+
+    " FIXME: NERDTreeTabsToggle not work
+    "nnoremap <Leader>ee :NERDTreeTabsToggle<CR>
+    "map <C-e> <plug>NERDTreeTabsToggle<CR>
+    map <Leader>ee :NERDTreeToggle<CR>
+    map <leader>e :NERDTreeFind<CR>
+    nmap <leader>nt :NERDTreeFind<CR>
+
+    let NERDTreeShowBookmarks=1
+    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+    let NERDTreeChDirMode=0
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowHidden=1
+    let NERDTreeKeepTreeInNewTab=1
+    let g:nerdtree_tabs_open_on_gui_startup=0
+
+    " Initialize NERDTree as needed {
+    function! FTKNERDTreeInitAsNeeded()
+        redir => bufoutput
+        buffers!
+        redir END
+        let idx = stridx(bufoutput, "NERD_tree")
+        if idx > -1
+            NERDTreeMirror
+            NERDTreeFind
+            wincmd l
+        endif
+    endfunction
+endif
+
 " vim-airline
 if isdirectory(expand(g:ftk_plugin_dir . '/vim-airline-themes'))
     if !exists('g:airline_theme')
