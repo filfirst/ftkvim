@@ -63,10 +63,11 @@ if !empty(glob(s:ftk_vim_plug_path))
         let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
     endif
 
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'filfirst/Monota'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'filfirst/Monota'
-    Plug 'altercation/vim-colors-solarized'
+    Plug 'easymotion/vim-easymotion'
 
     " Use local plugins config if available
     if filereadable(expand("~/.vimrc.plugins.local"))
