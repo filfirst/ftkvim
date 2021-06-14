@@ -130,11 +130,6 @@ let g:skipview_files = [
 
 " Complete
 set complete-=i
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>\<ESC>a" : "\<CR>"
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <C-f>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-f>"
-inoremap <expr> <C-b>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-b>"
 
 
 "==============================================================================
@@ -299,6 +294,13 @@ nnoremap <Leader>at :set completeopt-=preview<CR>
 " Colorcolumn
 nnoremap <Leader>88 :set cc=80<CR>
 nnoremap <Leader>89 :set cc=<CR>
+
+" Complete
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>\<ESC>a" : "\<CR>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <C-f>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-f>"
+inoremap <expr> <C-b>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-b>"
 
 
 "==============================================================================
