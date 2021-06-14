@@ -479,6 +479,8 @@ function! FTKStripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
+command! FTKStripTrailingWhitespace call FTKStripTrailingWhitespace()
+
 
 "==============================================================================
 " Use local vimrc if available
