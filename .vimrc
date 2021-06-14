@@ -360,6 +360,13 @@ if isdirectory(expand(g:ftk_plugin_dir . "/Monota"))
     call monota#SetColorScheme('dark')
 endif
 
+" vim-signify
+if isdirectory(expand(g:ftk_plugin_dir . "/vim-signify"))
+    let g:signify_sign_add = '+'
+    let g:signify_sign_delete = '-'
+    let g:signify_sign_change = '*'
+endif
+
 
 "==============================================================================
 " GUI Settings

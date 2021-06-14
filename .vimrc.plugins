@@ -72,7 +72,7 @@ if !empty(glob(s:ftk_vim_plug_path))
     Plug 'easymotion/vim-easymotion'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'gorodinskiy/vim-coloresque'
-    "Plug 'mhinz/vim-signify'
+    Plug 'mhinz/vim-signify'
     "Plug 'tpope/vim-fugitive'
     "Plug 'Xuyuanp/nerdtree-git-plugin'
 
