@@ -128,8 +128,17 @@ let g:skipview_files = [
     \ '\[example pattern\]'
     \ ]
 
+" Auto close preview and quickfix windows
+augroup onleaveall
+    autocmd VimLeavePre * :pclose
+    autocmd VimLeavePre * :cclose
+augroup END
+
 " Complete
 set complete-=i
+
+" Enable man command
+runtime! ftplugin/man.vim
 
 
 "==============================================================================
@@ -362,6 +371,11 @@ if isdirectory(expand(g:ftk_plugin_dir . "/Monota"))
     nnoremap <Leader>scl :MonotaSetLightColorScheme<CR>
 
     call monota#SetColorScheme('dark')
+endif
+
+" auto-pairs
+if isdirectory(expand(g:ftk_plugin_dir . "/auto-pairs"))
+    let g:AutoPairsMultilineClose = 0
 endif
 
 " vim-signify
