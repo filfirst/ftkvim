@@ -133,8 +133,8 @@ set complete-=i
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>\<ESC>a" : "\<CR>"
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
+inoremap <expr> <C-f>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-f>"
+inoremap <expr> <C-b>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-b>"
 
 
 "==============================================================================
