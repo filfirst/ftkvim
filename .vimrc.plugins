@@ -53,8 +53,6 @@ endif
 if !empty(glob(s:ftk_vim_plug_path))
     call plug#begin(g:ftk_plugin_dir)
 
-    Plug 'tomtom/tlib_vim'
-
     if executable('rg')
         Plug 'mileszs/ack.vim'
         let g:ackprg = 'rg --column --smart-case'
