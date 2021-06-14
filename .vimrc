@@ -359,9 +359,24 @@ endif
 
 " vim-signify
 if isdirectory(expand(g:ftk_plugin_dir . "/vim-signify"))
-    let g:signify_sign_add = '+'
+    let g:signify_sign_add =    '+'
     let g:signify_sign_delete = '-'
     let g:signify_sign_change = '*'
+endif
+
+" nerdtree-git-plugin
+if isdirectory(expand(g:ftk_plugin_dir . "/nerdtree-git-plugin"))
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
+        \ "Modified"  : "*",
+        \ "Staged"    : "+",
+        \ "Untracked" : "?",
+        \ "Renamed"   : "=",
+        \ "Unmerged"  : "!",
+        \ "Deleted"   : "-",
+        \ "Dirty"     : "~",
+        \ "Clean"     : "%",
+        \ "Unknown"   : "#"
+        \ }
 endif
 
 
