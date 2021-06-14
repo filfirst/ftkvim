@@ -130,6 +130,11 @@ let g:skipview_files = [
 
 " Complete
 set complete-=i
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>\<ESC>a" : "\<CR>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
+inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 
 
 "==============================================================================
