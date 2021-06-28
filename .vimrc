@@ -357,6 +357,7 @@ endif
 
 if isdirectory(expand(g:ftk_plugin_dir . '/vim-airline'))
     let g:airline_skip_empty_sections = 1
+    let g:airline_symbols_ascii = 1
     nnoremap <Leader>ae :let w:airline_skip_empty_sections = 1<CR>
     nnoremap <Leader>ea :let w:airline_skip_empty_sections = 0<CR>
     nnoremap <Leader>aa :AirlineRefresh<CR>
